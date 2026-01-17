@@ -15,6 +15,9 @@ import {
   Rss,
   School,
   ChevronDown,
+  PlusCircle,
+  FileText,
+  Upload,
 } from "lucide-react";
 import {
   Collapsible,
@@ -24,6 +27,12 @@ import {
 import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 const mainNav = [
   { name: "Home", href: "/home", icon: Home },
@@ -50,6 +59,41 @@ export function DashboardNav() {
       <div className="flex items-center gap-2 px-2 py-4">
         <Icons.logo className="h-8 w-8 text-primary" />
         <span className="text-lg font-headline font-semibold">ScholarAI</span>
+      </div>
+      <div className="px-2 pb-4">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button className="w-full">
+              <PlusCircle className="mr-2 h-4 w-4" /> Create
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-56">
+            <DropdownMenuItem>
+              <FileText className="mr-2 h-4 w-4" />
+              Notebook
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Upload className="mr-2 h-4 w-4" />
+              Import Notebook
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Database className="mr-2 h-4 w-4" />
+              Dataset
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <BrainCircuit className="mr-2 h-4 w-4" />
+              Model
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <GanttChart className="mr-2 h-4 w-4" />
+              Benchmark
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <GanttChart className="mr-2 h-4 w-4" />
+              Benchmark Task
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
       <div className="flex-1 space-y-1">
         {mainNav.map((item) => (
