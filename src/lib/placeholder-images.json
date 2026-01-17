@@ -1,3 +1,46 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "recent-activity-1",
+      "description": "A person working on a laptop with code on the screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1640720157809-afe044d24879?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb2RpbmclMjBsYXB0b3B8ZW58MHx8fHwxNzY4NjMyNjU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coding laptop"
+    },
+    {
+      "id": "recent-activity-2",
+      "description": "A chart showing data analysis.",
+      "imageUrl": "https://images.unsplash.com/photo-1691643158804-d3f02eb456a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkYXRhJTIwY2hhcnR8ZW58MHx8fHwxNzY4NjI1NDAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data chart"
+    },
+    {
+      "id": "suggestion-1",
+      "description": "A machine learning model diagram.",
+      "imageUrl": "https://images.unsplash.com/photo-1637715863105-83fe44b5992f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bmV1cmFsJTIwbmV0d29ya3xlbnwwfHx8fDE3Njg1NjgzMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "neural network"
+    },
+    {
+      "id": "suggestion-2",
+      "description": "A group of people collaborating around a table.",
+      "imageUrl": "https://images.unsplash.com/photo-1492366254240-43affaefc3e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3Njg1MzY1NjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team collaboration"
+    },
+    {
+      "id": "dataset-1",
+      "description": "Abstract data visualization.",
+      "imageUrl": "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkYXRhJTIwdmlzdWFsaXphdGlvbnxlbnwwfHx8fDE3Njg2MTA4MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data visualization"
+    },
+    {
+      "id": "dataset-2",
+      "description": "Cityscape at night.",
+      "imageUrl": "https://images.unsplash.com/photo-1531819177115-428566ccfb50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaXR5JTIwbmlnaHR8ZW58MHx8fHwxNzY4NTQ3NTAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city night"
+    },
+    {
+      "id": "dataset-3",
+      "description": "Microscopic view of cells.",
+      "imageUrl": "https://images.unsplash.com/photo-1607073606268-05ba53ffcf3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzY2llbmNlJTIwY2VsbHN8ZW58MHx8fHwxNzY4NjMyNjU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "science cells"
+    }
+  ]
 }

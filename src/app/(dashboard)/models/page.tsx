@@ -1,0 +1,28 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BrainCircuit } from "lucide-react";
+
+export default function ModelsPage() {
+  return (
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-3xl font-headline font-bold tracking-tight">
+          Models
+        </h1>
+        <p className="text-muted-foreground">
+          Explore and share pre-trained or custom machine learning models.
+        </p>
+      </div>
+      <Card className="flex flex-col items-center justify-center text-center p-12">
+        <CardHeader>
+          <div className="mx-auto bg-muted p-4 rounded-full">
+            <BrainCircuit className="h-12 w-12 text-muted-foreground" />
+          </div>
+          <CardTitle className="mt-4">Models Page Coming Soon</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">This section is under construction.</p>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
