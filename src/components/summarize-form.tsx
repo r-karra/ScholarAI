@@ -1,12 +1,12 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 import { onSummarize, type FormState } from "@/app/actions/summarize";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2, Sparkles } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 function SubmitButton() {
@@ -30,7 +30,7 @@ function SubmitButton() {
 
 export function SummarizeForm() {
   const initialState: FormState = { message: "" };
-  const [state, formAction] = useFormState(onSummarize, initialState);
+  const [state, formAction] = useActionState(onSummarize, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
