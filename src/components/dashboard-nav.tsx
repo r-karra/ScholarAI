@@ -57,14 +57,14 @@ export function DashboardNav() {
 
   return (
     <>
-      <SidebarHeader className="p-4 space-y-4">
+      <SidebarHeader className="p-4 flex flex-col gap-4">
         <div className="flex items-center gap-2">
           <Icons.logo className="h-8 w-8 text-primary" />
           <span className="text-xl font-headline font-semibold">ScholarAI</span>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="w-full justify-start font-medium">
+            <Button className="w-full justify-start font-medium shadow-sm">
               <PlusCircle className="mr-2 h-4 w-4" /> Create
             </Button>
           </DropdownMenuTrigger>
