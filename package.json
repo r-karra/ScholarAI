@@ -10,7 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "push": "git init && git remote add origin https://github.com/r-karra/ScholarAI.git || git remote set-url origin https://github.com/r-karra/ScholarAI.git && git add . && git commit -m 'ScholarAI update' && git branch -M main && git push -u origin main"
+    "push": "git init && git remote add origin https://github.com/r-karra/ScholarAI.git || git remote set-url origin https://github.com/r-karra/ScholarAI.git && git add . && (git commit -m 'ScholarAI update' || true) && git branch -M main && git push -f -u origin main"
   },
   "dependencies": {
     "@genkit-ai/google-genai": "^1.20.0",
