@@ -33,6 +33,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { SidebarHeader, SidebarContent, SidebarGroup, SidebarMenu, SidebarMenuItem, SidebarMenuButton } from "./ui/sidebar";
 
 const mainNav = [
   { name: "Home", href: "/home", icon: Home },
@@ -55,19 +56,19 @@ export function DashboardNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-col h-full text-sm font-medium p-2">
-      <div className="flex items-center gap-2 px-2 py-4">
-        <Icons.logo className="h-8 w-8 text-primary" />
-        <span className="text-lg font-headline font-semibold">ScholarAI</span>
-      </div>
-      <div className="px-2 pb-4">
+    <>
+      <SidebarHeader className="p-4 space-y-4">
+        <div className="flex items-center gap-2">
+          <Icons.logo className="h-8 w-8 text-primary" />
+          <span className="text-xl font-headline font-semibold">ScholarAI</span>
+        </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="w-full">
+            <Button className="w-full justify-start font-medium">
               <PlusCircle className="mr-2 h-4 w-4" /> Create
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56">
+          <DropdownMenuContent className="w-56" align="start">
             <DropdownMenuItem>
               <FileText className="mr-2 h-4 w-4" />
               Notebook
@@ -88,54 +89,56 @@ export function DashboardNav() {
               <GanttChart className="mr-2 h-4 w-4" />
               Benchmark
             </DropdownMenuItem>
-            <DropdownMenuItem>
-              <GanttChart className="mr-2 h-4 w-4" />
-              Benchmark Task
-            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      </div>
-      <div className="flex-1 space-y-1">
-        {mainNav.map((item) => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className={cn(
-              "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary",
-              pathname === item.href && "bg-muted text-primary"
-            )}
-          >
-            <item.icon className="h-4 w-4" />
-            {item.name}
-          </Link>
-        ))}
-        <Collapsible className="w-full">
-          <CollapsibleTrigger asChild>
-            <Button
-              variant="ghost"
-              className="w-full justify-start gap-3 rounded-lg px-3 text-muted-foreground"
-            >
-              <ChevronDown className="h-4 w-4" />
-              More
-            </Button>
-          </CollapsibleTrigger>
-          <CollapsibleContent className="space-y-1 ml-7">
-            {moreNav.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary",
-                  pathname === item.href && "bg-muted text-primary"
-                )}
-              >
-                <item.icon className="h-4 w-4" />
-                {item.name}
-              </Link>
+      </SidebarHeader>
+      
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarMenu>
+            {mainNav.map((item) => (
+              <SidebarMenuItem key={item.name}>
+                <SidebarMenuButton 
+                  asChild 
+                  isActive={pathname === item.href}
+                  className={cn(
+                    "w-full transition-colors",
+                    pathname === item.href && "bg-primary/10 text-primary hover:bg-primary/15"
+                  )}
+                >
+                  <Link href={item.href}>
+                    <item.icon className="h-4 w-4" />
+                    <span>{item.name}</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             ))}
-          </CollapsibleContent>
-        </Collapsible>
-      </div>
-    </nav>
+            
+            <Collapsible className="w-full group/collapsible">
+              <SidebarMenuItem>
+                <CollapsibleTrigger asChild>
+                  <SidebarMenuButton className="w-full justify-between">
+                    <div className="flex items-center gap-2">
+                      <ChevronDown className="h-4 w-4 transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180" />
+                      <span>More</span>
+                    </div>
+                  </SidebarMenuButton>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="space-y-1 ml-6 mt-1">
+                  {moreNav.map((item) => (
+                    <SidebarMenuButton key={item.name} asChild className="h-8">
+                      <Link href={item.href} className="text-muted-foreground hover:text-primary">
+                        <item.icon className="h-3.5 w-3.5" />
+                        <span>{item.name}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  ))}
+                </CollapsibleContent>
+              </SidebarMenuItem>
+            </Collapsible>
+          </SidebarMenu>
+        </SidebarGroup>
+      </SidebarContent>
+    </>
   );
 }
